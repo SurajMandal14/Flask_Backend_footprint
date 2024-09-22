@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import os
 from model import predict_product
 from footprint import load_footprint_data, get_footprint_data
@@ -18,7 +18,7 @@ def home():
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Water Footprint Estimator</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
                 background-color: #f8f9fa;
@@ -61,7 +61,7 @@ def home():
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="/static/js/jquery.min.js"></script>
         <script>
             $('form').on('submit', function(e) {
                 e.preventDefault();
@@ -94,6 +94,17 @@ def home():
                 });
             });
         </script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        </script>
     </body>
     </html>
     '''
@@ -123,6 +134,10 @@ def upload_image():
             return jsonify({"error": "Product not found in the database"}), 404
     else:
         return jsonify({"error": "Failed to load footprint data"}), 500
+
+@app.route('/sw.js')
+def service_worker():
+    return send_from_directory('.', 'sw.js')
 
 if __name__ == '__main__':
     if not os.path.exists('uploads'):
