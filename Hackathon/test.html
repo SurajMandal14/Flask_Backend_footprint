@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Level Maps by State</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Water footprint Dashboard</h1>
+      </div>
+
+      <div class="menu">
+        <div class="dropdown">
+          <a href="#">Energy</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Electricity</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Climate & Environment</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Economy & Demography</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Analytics</a>
+        </div>
+
+        <div class="dropdown">
+          <a href="#">Portals</a>
+        </div>
+      </div>
+    </div>
+
+    <h1>Pre Monsoon Water Levels | Post Monsoon Water Levels</h1>
+
+    <div class="selection-container">
+      <div class="year-btns">
+        <button class="year-btn">2022-</button>
+        <button class="year-btn">2021-</button>
+        <button class="year-btn active">2020-</button>
+
+      </div>
+
+      <!-- Dropdown to select the State -->
+      <label for="stateSelect" style="font-size: 16px;">Choose State:</label>
+      <select id="stateSelect" onchange="updateImages()">
+          <option value="all-india">All India</option>
+          <option value="andhra-pradesh">Andhra Pradesh</option>
+          <option value="arunachal-pradesh">Arunachal Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="bihar">Bihar</option>
+          <option value="chhattisgarh">Chhattisgarh</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="haryana">Haryana</option>
+          <option value="himachal-pradesh">Himachal Pradesh</option>
+          <option value="jharkhand">Jharkhand</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="madhya-pradesh">Madhya Pradesh</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="manipur">Manipur</option>
+          <option value="meghalaya">Meghalaya</option>
+          <option value="mizoram">Mizoram</option>
+          <option value="nagaland">Nagaland</option>
+          <option value="odisha">Odisha</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="sikkim">Sikkim</option>
+          <option value="tamil-nadu">Tamil Nadu</option>
+          <option value="telangana">Telangana</option>
+          <option value="tripura">Tripura</option>
+          <option value="uttar-pradesh">Uttar Pradesh</option>
+          <option value="uttarakhand">Uttarakhand</option>
+          <option value="west-bengal">West Bengal</option>
+      </select>
+  
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <span class="very-shallow"></span>
+        <label>Very Shallow Water Level (0 to 2)</label>
+      </div>
+      <div class="legend-item">
+        <span class="shallow"></span>
+        <label>Shallow Water Level (2 to 5)</label>
+      </div>
+      <div class="legend-item">
+        <span class="moderate"></span>
+        <label>Moderate Water Level (5 to 10)</label>
+      </div>
+       <div class="legend-item">
+        <span class="moderately-deep"></span>
+        <label>Moderately Deep Water Level (10 to 20)</label>
+      </div>
+      <div class="legend-item">
+        <span class="deep"></span>
+        <label>Deep Water Level (20 to 40)</label>
+      </div>
+      <div class="legend-item">
+        <span class="very-deep"></span>
+        <label>Very Deep Water Level (>40)</label>
+      </div>
+    </div>
+
+    <div class="image-container" id="image-container">
+      <!-- Images will be displayed here -->
+    </div>
+
+    <script src="/script/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+/* General styling for the body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.navbar {
+    background-color: #1C90D4;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+
+
+  .navbar .logo h1 {
+    color: white;
+    margin: 2px;
+    font-size: 24px;
+  }
+
+  .navbar .menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .menu a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .navbar .menu a:hover {
+    background-color: #30b8f75b;
+    border-radius: 5px;
+    color: rgb(246, 246, 246);
+  }
+
+/* Styling for the header */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 2.0rem;
+    margin-top: 100px;
+}
+.selection-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    width: 92%;
+    margin: 20px auto;
+    gap: 50px; 
+}
+
+
+
+.year-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    
+}
+
+.year-btn:hover {
+    background-color: #2980b9;
+}
+
+.year-btn.active {
+    background-color: #2980b9;
+}
+select {
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 2px solid #3498db;
+    background-color: white;
+    color: #2c3e50;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+select:hover {
+    border-color: #2980b9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox container to hold images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 20px;
+     
+}
+
+/* Individual image styling */
+img {
+    width: 450px;
+    height: 506px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.134);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.084);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+
+
+/* Container for the legend */
+.legend {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.legend span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+label {
+    font-size: 12px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.very-shallow { background-color: #2ecc71; }
+.shallow { background-color: #f1c40f; }
+.moderate { background-color: #f39c12; }
+.moderately-deep { background-color: #e67e22; }
+.deep { background-color: #e74c3c; }
+.very-deep { background-color: #8e44ad; }
+
+
+.download-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1.5rem;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    select {
+        font-size: 1rem;
+    }
+}
+
